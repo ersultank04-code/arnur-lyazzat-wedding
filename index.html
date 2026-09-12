@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арнұр & Ляззат — Үйлену тойы</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f5ef;
+            color: #17382b;
+            line-height: 1.7;
+        }
+
+        section { width: 100%; padding: 120px 25px; }
+
+        .container { max-width: 1050px; margin: 0 auto; }
+
+        .label {
+            text-align: center;
+            color: #b59668;
+            font-size: 12px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(58px, 8vw, 92px);
+            font-weight: 400;
+            line-height: 1.05;
+            margin-bottom: 55px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: #f8f5ef;
+        }
+
+        .hero-border {
+            position: absolute;
+            inset: 25px;
+            border: 1px solid #d9c8aa;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1000px;
+            padding: 70px 25px;
+        }
+
+        .top-text {
+            font-size: 13px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #b59668;
+            margin-bottom: 40px;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(70px, 11vw, 150px);
+            font-weight: 400;
+            line-height: .8;
+            color: #17382b;
+        }
+
+        .ampersand {
+            display: block;
+            color: #b59668;
+            font-size: 60px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .date {
+            margin-top: 60px;
+            font-size: 16px;
+            letter-spacing: 8px;
+            color: #496757;
+        }
+
+        .heart {
+            width: 75px;
+            height: 75px;
+            border: 1px solid #b59668;
+            border-radius: 50%;
+            margin: 55px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            color: #b59668;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #496757;
+            text-transform: uppercase;
+        }
+
+        /* INVITATION */
+        .invitation { background: #17382b; color: white; text-align: center; }
+        .invitation .title { color: white; }
+
+        .invitation-text {
+            max-width: 850px;
+            margin: auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(27px, 3vw, 36px);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .invitation-text p + p { margin-top: 30px; }
+
+        /* DATE */
+        .date-section { background: #fffdf9; text-align: center; }
+
+        .big-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(170px, 23vw, 280px);
+            font-weight: 400;
+            line-height: .7;
+            color: #17382b;
+        }
+
+        .month {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 5vw, 60px);
+            color: #b59668;
+            margin-top: 50px;
+        }
+
+        .year {
+            font-size: 15px;
+            letter-spacing: 9px;
+            margin-top: 18px;
+            color: #496757;
+        }
+
+        /* LOCATION */
+        .location-section { background: #f8f5ef; }
+
+        .location-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fffdf9;
+            border: 1px solid #d9c8aa;
+            padding: 85px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .location-card:before {
+            content: "✦";
+            position: absolute;
+            top: 25px;
+            left: 30px;
+            color: #b59668;
+            font-size: 22px;
+        }
+
+        .location-card:after {
+            content: "✦";
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            color: #b59668;
+            font-size: 22px;
+        }
+
+        .location-icon {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #b59668;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b59668;
+            font-size: 32px;
+        }
+
+        .restaurant-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(60px, 9vw, 100px);
+            line-height: 1;
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+
+        .restaurant-type {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 5vw, 50px);
+            margin-top: 18px;
+            margin-bottom: 60px;
+        }
+
+        .location-item { margin-bottom: 48px; }
+
+        .location-item strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #17382b;
+        }
+
+        .location-item span {
+            display: block;
+            font-size: 19px;
+            color: #496757;
+            line-height: 1.9;
+        }
+
+        .owners {
+            border-top: 1px solid #dfd2bd;
+            padding-top: 38px;
+            margin-top: 10px;
+        }
+
+        .owners-label {
+            display: block;
+            color: #b59668;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .owners-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 45px;
+            padding: 20px 50px;
+            border: 1px solid #17382b;
+            color: #17382b;
+            background: transparent;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            transition: .3s;
+        }
+
+        .map-button:hover { background: #17382b; color: white; }
+
+        /* CALENDAR */
+        .calendar-section { background: #fffdf9; }
+
+        .calendar {
+            max-width: 750px;
+            margin: auto;
+            border-top: 1px solid #d9c8aa;
+            border-bottom: 1px solid #d9c8aa;
+            padding: 50px 10px;
+        }
+
+        .calendar-month {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .day-name {
+            text-align: center;
+            color: #b59668;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .day {
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            position: relative;
+        }
+
+        .wedding-day { color: white; z-index: 1; }
+
+        .wedding-day:before {
+            content: "";
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: #17382b;
+            z-index: -1;
+        }
+
+        /* COUNTDOWN */
+        .countdown-section {
+            background: #f8f5ef;
+            text-align: center;
+            padding: 130px 25px;
+        }
+
+        .countdown-title { margin-bottom: 70px; }
+
+        .countdown {
+            max-width: 950px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .countdown-item { min-width: 145px; }
+
+        .countdown-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(65px, 9vw, 110px);
+            line-height: .9;
+            font-weight: 400;
+            color: #17382b;
+        }
+
+        .countdown-label {
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #b59668;
+        }
+
+        .countdown-divider {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 65px;
+            color: #b59668;
+            margin-top: -25px;
+        }
+
+        .countdown-date {
+            margin-top: 65px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            color: #17382b;
+        }
+
+        .countdown-message {
+            margin-top: 25px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            font-style: italic;
+            color: #496757;
+        }
+
+        /* RSVP */
+        .rsvp { background: #17382b; color: white; }
+
+        .rsvp .title { color: white; }
+
+        .subtitle {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 27px;
+            margin-bottom: 60px;
+            color: rgba(255,255,255,.8);
+        }
+
+        .form { max-width: 650px; margin: auto; }
+
+        .form-group { margin-bottom: 40px; }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #d9c8aa;
+            margin-bottom: 14px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 18px 5px;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,.4);
+            background: transparent;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            outline: none;
+        }
+
+        .input:focus { border-bottom-color: #b59668; }
+        .input::placeholder { color: rgba(255,255,255,.4); }
+
+        .question {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #d9c8aa;
+            margin-bottom: 22px;
+        }
+
+        .radio {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .radio input {
+            width: 19px;
+            height: 19px;
+            accent-color: #b59668;
+        }
+
+        .submit {
+            width: 100%;
+            margin-top: 25px;
+            padding: 21px;
+            border: 1px solid #b59668;
+            background: #b59668;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .submit:hover { background: transparent; color: #b59668; }
+        .submit:disabled { opacity: .65; cursor: wait; }
+
+        .form-status {
+            text-align: center;
+            margin-top: 25px;
+            min-height: 28px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: #d9c8aa;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #17382b;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            border-top: 1px solid rgba(255,255,255,.15);
+        }
+
+        .footer-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 50px;
+            margin-bottom: 18px;
+        }
+
+        footer p {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,.55);
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .hero-border { inset: 12px; }
+            .hero-content { padding: 60px 20px; }
+
+            .top-text { font-size: 9px; letter-spacing: 3px; }
+            .names { font-size: 70px; }
+            .ampersand { font-size: 42px; margin: 22px 0; }
+            .date { font-size: 11px; letter-spacing: 4px; }
+
+            section { padding: 85px 18px; }
+
+            .title {
+                font-size: 48px;
+                line-height: 1.08;
+                margin-bottom: 42px;
+            }
+
+            .label { font-size: 9px; letter-spacing: 4px; }
+
+            .invitation-text { font-size: 24px; }
+
+            .big-date { font-size: 170px; }
+            .month { font-size: 42px; }
+            .year { font-size: 12px; }
+
+            .location-card { padding: 65px 25px; }
+            .restaurant-name { font-size: 60px; }
+            .restaurant-type { font-size: 35px; }
+            .location-item strong { font-size: 16px; }
+            .location-item span { font-size: 16px; }
+            .owners-name { font-size: 28px; }
+
+            .map-button {
+                width: 100%;
+                padding: 19px 10px;
+            }
+
+            .calendar { padding-left: 0; padding-right: 0; }
+            .calendar-month { font-size: 40px; }
+            .day { height: 45px; font-size: 19px; }
+            .wedding-day:before { width: 40px; height: 40px; }
+            .day-name { font-size: 8px; }
+
+            .countdown-section { padding: 90px 15px; }
+            .countdown-title { font-size: 46px; margin-bottom: 55px; }
+            .countdown { gap: 7px; }
+            .countdown-item { min-width: 65px; }
+            .countdown-number { font-size: 48px; }
+            .countdown-label {
+                font-size: 7px;
+                letter-spacing: 1.5px;
+                margin-top: 14px;
+            }
+            .countdown-divider { font-size: 35px; margin-top: -18px; }
+            .countdown-date { margin-top: 50px; font-size: 23px; }
+            .countdown-message { font-size: 21px; margin-top: 20px; }
+
+            .subtitle { font-size: 23px; }
+            .input { font-size: 16px; }
+            .radio { font-size: 15px; }
+            .footer-names { font-size: 40px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ПЕРВЫЙ ЭКРАН -->
+<section class="hero">
+    <div class="hero-border"></div>
+
+    <div class="hero-content">
+        <div class="top-text">Свадебная церемония</div>
+
+        <div class="names">
+            Арнұр
+            <span class="ampersand">&amp;</span>
+            Ляззат
+        </div>
+
+        <div class="date">24 · 10 · 2026</div>
+
+        <div class="heart">♡</div>
+    </div>
+
+    <div class="scroll">төмен қарай жылжытыңыз</div>
+</section>
+
+
+<!-- ПРИГЛАШЕНИЕ -->
+<section class="invitation">
+    <div class="container">
+        <div class="label">Құрметті қонақтар</div>
+
+        <div class="title">
+            Сіздерді тойымызға шақырамыз
+        </div>
+
+        <div class="invitation-text">
+            <p>
+                Махаббат – екі жүректі тоғыстыратын
+                ең керемет сезім.
+            </p>
+
+            <p>
+                Біз өміріміздегі осы ерекше күнді
+                сіздермен бірге өткізгіміз келеді!
+                Сіздерді үйлену тойымыздың
+                қадірлі қонағы болуға шақырамыз.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ДАТА -->
+<section class="date-section">
+    <div class="container">
+        <div class="label">Біздің ерекше күніміз</div>
+
+        <div class="title">
+            Осы ерекше күнді бірге атап өтейік
+        </div>
+
+        <div class="big-date">24</div>
+
+        <div class="month">Қазан</div>
+        <div class="year">2026</div>
+    </div>
+</section>
+
+
+<!-- ЛОКАЦИЯ -->
+<section class="location-section">
+    <div class="container">
+        <div class="label">Той салтанаты</div>
+
+        <div class="title">Сіздерді күтеміз</div>
+
+        <div class="location-card">
+
+            <div class="location-icon">♡</div>
+
+            <div class="restaurant-name">SHARIFA</div>
+
+            <div class="restaurant-type">Мейрамханасы</div>
+
+            <div class="location-item">
+                <strong>Басталуы</strong>
+                <span>24 қазан 2026 жыл</span>
+                <span>Сағат 17:00</span>
+            </div>
+
+            <div class="location-item">
+                <strong>Мекен-жайымыз</strong>
+                <span>Алматы қаласы</span>
+                <span>Рыскулова көшесі, 3а</span>
+            </div>
+
+            <div class="owners">
+                <span class="owners-label">Той иелері</span>
+                <div class="owners-name">Ұлан және Эльмира</div>
+            </div>
+
+            <a
+                href="https://2gis.kz/almaty/geo/70000001041738567"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-button"
+            >
+                КАРТАНЫ АШУ
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- КАЛЕНДАРЬ -->
+<section class="calendar-section">
+    <div class="container">
+        <div class="label">Save the date</div>
+
+        <div class="title">Кездескенше!</div>
+
+        <div class="calendar">
+            <div class="calendar-month">Қазан 2026</div>
+
+            <div class="calendar-grid">
+                <div class="day-name">Дс</div>
+                <div class="day-name">Сс</div>
+                <div class="day-name">Ср</div>
+                <div class="day-name">Бс</div>
+                <div class="day-name">Жм</div>
+                <div class="day-name">Сн</div>
+                <div class="day-name">Жс</div>
+
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day wedding-day">24</div>
+                <div class="day">25</div>
+
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day">31</div>
+                <div class="day"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ОБРАТНЫЙ ОТСЧЁТ -->
+<section class="countdown-section">
+    <div class="container">
+
+        <div class="label">Тойға дейінгі уақыт</div>
+
+        <div class="title countdown-title">
+            Біздің кездесуімізге<br>дейін
+        </div>
+
+        <div class="countdown">
+
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">КҮН</div>
+            </div>
+
+            <div class="countdown-divider">:</div>
+
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">САҒАТ</div>
+            </div>
+
+            <div class="countdown-divider">:</div>
+
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">МИНУТ</div>
+            </div>
+
+            <div class="countdown-divider">:</div>
+
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">СЕКУНД</div>
+            </div>
+
+        </div>
+
+        <div class="countdown-date">
+            24 қазан 2026 · 17:00
+        </div>
+
+        <div class="countdown-message" id="countdownMessage">
+            Осы ерекше күнді асыға күтеміз
+        </div>
+    </div>
+</section>
+
+
+<!-- САУАЛНАМА -->
+<section class="rsvp">
+    <div class="container">
+
+        <div class="label">RSVP</div>
+
+        <div class="title">Сауалнама</div>
+
+        <div class="subtitle">
+            Тойға келуіңізді растауыңызды сұраймыз
+        </div>
+
+        <form class="form" id="guestForm">
+
+            <div class="form-group">
+                <label class="form-label">
+                    ЕСІМІҢІЗ / ВАШЕ ИМЯ
+                </label>
+
+                <input
+                    type="text"
+                    class="input"
+                    id="guestName"
+                    placeholder="Атыңызды жазыңыз"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+
+                <div class="question">
+                    ТОЙҒА КЕЛЕ АЛАСЫЗ БА?
+                </div>
+
+                <label class="radio">
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Иә, қуана келемін"
+                        required
+                    >
+                    Иә, қуана келемін
+                </label>
+
+                <label class="radio">
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Өкінішке қарай, келе алмаймын"
+                    >
+                    Өкінішке қарай, келе алмаймын
+                </label>
+
+            </div>
+
+            <button type="submit" class="submit" id="submitButton">
+                ЖІБЕРУ / ОТПРАВИТЬ
+            </button>
+
+            <div class="form-status" id="formStatus"></div>
+        </form>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-names">Арнұр &amp; Ляззат</div>
+    <p>© 2026 АРНҰР &amp; ЛЯЗЗАТ</p>
+</footer>
+
+
+<script>
+    /* =====================================
+       ОБРАТНЫЙ ОТСЧЁТ
+       24 октября 2026, 17:00
+    ===================================== */
+
+    const weddingDate = new Date("2026-10-24T17:00:00");
+
+    function updateCountdown() {
+        const now = new Date();
+        const difference = weddingDate - now;
+
+        if (difference <= 0) {
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+
+            document.getElementById("countdownMessage").textContent =
+                "Бүгін — біздің ерекше күніміз!";
+
+            return;
+        }
+
+        const days = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        const hours = Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+
+        const minutes = Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+
+        const seconds = Math.floor(
+            (difference / 1000) % 60
+        );
+
+        document.getElementById("days").textContent =
+            String(days).padStart(2, "0");
+
+        document.getElementById("hours").textContent =
+            String(hours).padStart(2, "0");
+
+        document.getElementById("minutes").textContent =
+            String(minutes).padStart(2, "0");
+
+        document.getElementById("seconds").textContent =
+            String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+    /* =====================================
+       ОТПРАВКА ГОСТЯ В GOOGLE SHEETS
+    ===================================== */
+
+    const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbz86jtiTQRVRquJP4giD7NQ4rCl1xjGpHShUl96jNouhjknUEX5DsHfXyMxWpxKdr6uBA/exec";
+
+    const guestForm = document.getElementById("guestForm");
+    const submitButton = document.getElementById("submitButton");
+    const formStatus = document.getElementById("formStatus");
+
+    guestForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const name = document
+            .getElementById("guestName")
+            .value
+            .trim();
+
+        const attendance = document.querySelector(
+            'input[name="attendance"]:checked'
+        );
+
+        if (!name || !attendance) {
+            formStatus.textContent =
+                "Атыңызды енгізіп, жауапты таңдаңыз.";
+            return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = "ЖІБЕРІЛУДЕ...";
+        formStatus.textContent = "";
+
+        const data = {
+            name: name,
+            attendance: attendance.value
+        };
+
+        try {
+            /*
+                text/plain используется специально:
+                это позволяет отправить запрос в Apps Script
+                без обычного CORS preflight.
+            */
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify(data)
+            });
+
+            submitButton.textContent = "ЖІБЕРІЛДІ ✓";
+
+            formStatus.textContent =
+                "Рақмет! Жауабыңыз қабылданды ♥";
+
+            guestForm.reset();
+
+            setTimeout(function() {
+                submitButton.disabled = false;
+                submitButton.textContent =
+                    "ЖІБЕРУ / ОТПРАВИТЬ";
+            }, 3500);
+
+        } catch (error) {
+            console.error(error);
+
+            submitButton.disabled = false;
+            submitButton.textContent =
+                "ЖІБЕРУ / ОТПРАВИТЬ";
+
+            formStatus.textContent =
+                "Қате орын алды. Қайтадан көріңіз.";
+        }
+    });
+</script>
+
+</body>
+</html>
