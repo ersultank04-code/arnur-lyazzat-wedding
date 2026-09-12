@@ -998,90 +998,54 @@
 <!-- МУЗЫКА -->
 <div id="music-player">
     <button id="music-btn" onclick="toggleMusic()">🎵</button>
-    <div id="youtube-player"></div>
+    <audio id="wedding-music" loop>
+        <source src="музыка.mp3" type="audio/mpeg">
+    </audio>
 </div>
 
 <style>
-    #music-player {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        z-index: 99999;
-    }
+#music-player {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+}
 
-    #music-btn {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.8);
-        background: rgba(255,255,255,0.95);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        font-size: 22px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
+#music-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
-    #music-btn:hover {
-        transform: scale(1.08);
-    }
-
-    #youtube-player {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
+#music-btn:hover {
+    transform: scale(1.08);
+}
 </style>
 
 <script>
-    let player;
-    let isPlaying = false;
+const weddingMusic = document.getElementById('wedding-music');
+const musicButton = document.getElementById('music-btn');
 
-    // Подключаем YouTube API
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // Создаём плеер
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('youtube-player', {
-            height: '1',
-            width: '1',
-
-            // ТВОЯ ПЕСНЯ
-            videoId: 'K3haT0ezVEg',
-
-            playerVars: {
-                autoplay: 0,
-                controls: 0,
-                loop: 1,
-                playlist: 'K3haT0ezVEg'
-            }
-        });
+function toggleMusic() {
+    if (weddingMusic.paused) {
+        weddingMusic.play()
+            .then(() => {
+                musicButton.textContent = '🔊';
+            })
+            .catch(() => {
+                musicButton.textContent = '🎵';
+            });
+    } else {
+        weddingMusic.pause();
+        musicButton.textContent = '🎵';
     }
-
-    // Включение / выключение
-    function toggleMusic() {
-        if (!player) return;
-
-        if (isPlaying) {
-            player.pauseVideo();
-
-            document.getElementById('music-btn').textContent = '🎵';
-
-            isPlaying = false;
-        } else {
-            player.playVideo();
-
-            document.getElementById('music-btn').textContent = '⏸️';
-
-            isPlaying = true;
-        }
-    }
+}
 </script>
 </body>
 </html>
